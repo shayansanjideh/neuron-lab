@@ -12,9 +12,9 @@ def g(preset, prompt, setting="neuron", mode="add"):
     return next(r for r in rows if r["prompt"] == prompt and r["decoding"] == "greedy" and r["setting"] == setting
                 and (setting == "normal" or (r["preset"] == preset and r["mode"] == mode)))
 def tidy(t, n):
-    t = re.sub(r"\*\*|###? ?|</?think>", "", t)
-    t = "".join(c for c in t if ord(c) < 0x2000 or 0x2010 <= ord(c) <= 0x2027)
-    t = " ".join(l.strip() for l in t.split("\n") if l.strip())
+    """Model text verbatim (markdown, tags and emoji kept; emoji drawn with the Noto fallback fonts). Only blank lines are
+    dropped, and long replies are cut at a word boundary with "…"."""
+    t = "\n".join(l for l in t.strip().split("\n") if l.strip())
     return t if len(t) <= n else t[:n].rsplit(" ", 1)[0] + " …"
 def tint(c, a=.10):
     r, gg, b = Image.new("RGB", (1, 1), c).getpixel((0, 0))
@@ -49,13 +49,13 @@ P = "alien identity"; A = ACCENT[P]
 img = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(img)
 s = st[(P, "add", "neuron")]
 y0 = title(d, "One neuron (L22 N2742 +0.8) and Qwen can't stop thinking about aliens",
-           "All 8 prompts we tried, in order, greedy, unedited (trimmed). Including the one where it didn't work.")
+           "All 8 prompts we tried, in order, greedy, unedited (blank lines dropped, cut with …). Including the one where it didn't work.")
 prompts = [r["prompt"] for r in sorted((r for r in rows if r["setting"] == "normal" and r["decoding"] == "greedy"), key=lambda r: r["prompt_idx"])]
 cw, ch, gap = (W - 2 * PAD - 16) // 2, 150, 9
 for i, p in enumerate(prompts):
     r = g(P, p); lab = labels.get((r["rid"], P)); hit = lab == (1, 0)
     x, y = PAD + (i % 2) * (cw + 16), y0 + (i // 2) * (ch + gap)
-    tile(img, d, x, y, cw, ch, ("Q: " + p) + ("" if hit else ("   (aliens, but judged broken: it loops)" if lab == (1, 1) else "   (no aliens: miss)")), tidy(r["reply"], 230),
+    tile(img, d, x, y, cw, ch, ("Q: " + p) + ("" if hit else ("   (aliens, but judged broken)" if lab == (1, 1) else "   (no aliens: miss)")), tidy(r["reply"], 230),
          A if hit else DARK, 20, hl=("alien", "extraterrestrial", "planet", "earth", "ship", "lifeform", "civilization"), striped=not hit)
 foot(d, f"{MODEL} · runtime activation steering, no weight edits · whole run: {s['kc']}/{s['n']} coherent alien replies vs "
         f"{st[(P,'add','random')]['kc']}/{st[(P,'add','random')]['n']} for random neurons at the same push and "
@@ -66,7 +66,7 @@ img.save(os.path.join(OUT, "x_alien_every_prompt.png"))
 Q = "What's the meaning of life?"
 img = Image.new("RGB", (W, H), BG); d = ImageDraw.Draw(img)
 y0 = title(d, "“What's the meaning of life?” asked to the same model four times. Only the neurons change.",
-           "Greedy replies, unedited (trimmed). This prompt was picked because it's funny; hit rates for the whole run are in the footer.")
+           "Greedy replies, unedited (blank lines dropped, cut with …). Prompt picked because it's funny; whole-run hit rates in the footer.")
 items = [("Normal Qwen", g(None, Q, "normal")["reply"], GREY),
          ("Snark mix (lyra's neurons)", g("lyra mix", Q)["reply"], ACCENT["lyra mix"]),
          ("“Condolences” neuron", g("condolences on good things", Q)["reply"], ACCENT["condolences on good things"]),
