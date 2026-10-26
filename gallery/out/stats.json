@@ -1,0 +1,345 @@
+{
+ "sarcastic|None|normal": {
+  "k": 0,
+  "b": 0,
+  "kc": 0,
+  "n": 32,
+  "total": 32
+ },
+ "sarcastic + anti-sycophancy|None|normal": {
+  "k": 0,
+  "b": 0,
+  "kc": 0,
+  "n": 32,
+  "total": 32
+ },
+ "chill friend|None|normal": {
+  "k": 2,
+  "b": 0,
+  "kc": 2,
+  "n": 32,
+  "total": 32
+ },
+ "alien identity|None|normal": {
+  "k": 0,
+  "b": 0,
+  "kc": 0,
+  "n": 32,
+  "total": 32
+ },
+ "responsible AI persona|None|normal": {
+  "k": 0,
+  "b": 0,
+  "kc": 0,
+  "n": 32,
+  "total": 32
+ },
+ "condolences on good things|None|normal": {
+  "k": 0,
+  "b": 0,
+  "kc": 0,
+  "n": 32,
+  "total": 32
+ },
+ "lyra mix|None|normal": {
+  "k": 0,
+  "b": 0,
+  "kc": 0,
+  "n": 32,
+  "total": 32
+ },
+ "sarcastic|add|neuron": {
+  "k": 6,
+  "b": 3,
+  "kc": 6,
+  "n": 32,
+  "total": 32
+ },
+ "sarcastic|add|random": {
+  "k": 0,
+  "b": 6,
+  "kc": 0,
+  "n": 24,
+  "total": 24
+ },
+ "sarcastic|add|sign_flip": {
+  "k": 0,
+  "b": 3,
+  "kc": 0,
+  "n": 8,
+  "total": 8
+ },
+ "sarcastic|set|neuron": {
+  "k": 6,
+  "b": 4,
+  "kc": 5,
+  "n": 32,
+  "total": 32
+ },
+ "sarcastic|set|random": {
+  "k": 0,
+  "b": 6,
+  "kc": 0,
+  "n": 24,
+  "total": 24
+ },
+ "sarcastic|set|sign_flip": {
+  "k": 0,
+  "b": 3,
+  "kc": 0,
+  "n": 8,
+  "total": 8
+ },
+ "sarcastic + anti-sycophancy|add|neuron": {
+  "k": 21,
+  "b": 18,
+  "kc": 11,
+  "n": 32,
+  "total": 32
+ },
+ "sarcastic + anti-sycophancy|add|random": {
+  "k": 1,
+  "b": 19,
+  "kc": 0,
+  "n": 24,
+  "total": 24
+ },
+ "sarcastic + anti-sycophancy|add|sign_flip": {
+  "k": 0,
+  "b": 7,
+  "kc": 0,
+  "n": 8,
+  "total": 8
+ },
+ "sarcastic + anti-sycophancy|set|neuron": {
+  "k": 22,
+  "b": 17,
+  "kc": 14,
+  "n": 32,
+  "total": 32
+ },
+ "sarcastic + anti-sycophancy|set|random": {
+  "k": 1,
+  "b": 18,
+  "kc": 0,
+  "n": 24,
+  "total": 24
+ },
+ "sarcastic + anti-sycophancy|set|sign_flip": {
+  "k": 0,
+  "b": 8,
+  "kc": 0,
+  "n": 8,
+  "total": 8
+ },
+ "chill friend|add|neuron": {
+  "k": 24,
+  "b": 0,
+  "kc": 24,
+  "n": 32,
+  "total": 32
+ },
+ "chill friend|add|random": {
+  "k": 3,
+  "b": 0,
+  "kc": 3,
+  "n": 24,
+  "total": 24
+ },
+ "chill friend|add|sign_flip": {
+  "k": 0,
+  "b": 0,
+  "kc": 0,
+  "n": 8,
+  "total": 8
+ },
+ "chill friend|set|neuron": {
+  "k": 25,
+  "b": 0,
+  "kc": 25,
+  "n": 32,
+  "total": 32
+ },
+ "chill friend|set|random": {
+  "k": 2,
+  "b": 0,
+  "kc": 2,
+  "n": 24,
+  "total": 24
+ },
+ "chill friend|set|sign_flip": {
+  "k": 0,
+  "b": 0,
+  "kc": 0,
+  "n": 8,
+  "total": 8
+ },
+ "alien identity|add|neuron": {
+  "k": 28,
+  "b": 6,
+  "kc": 22,
+  "n": 32,
+  "total": 32
+ },
+ "alien identity|add|random": {
+  "k": 0,
+  "b": 1,
+  "kc": 0,
+  "n": 24,
+  "total": 24
+ },
+ "alien identity|add|sign_flip": {
+  "k": 0,
+  "b": 1,
+  "kc": 0,
+  "n": 8,
+  "total": 8
+ },
+ "alien identity|set|neuron": {
+  "k": 28,
+  "b": 5,
+  "kc": 23,
+  "n": 32,
+  "total": 32
+ },
+ "alien identity|set|random": {
+  "k": 0,
+  "b": 1,
+  "kc": 0,
+  "n": 24,
+  "total": 24
+ },
+ "alien identity|set|sign_flip": {
+  "k": 0,
+  "b": 1,
+  "kc": 0,
+  "n": 8,
+  "total": 8
+ },
+ "responsible AI persona|add|neuron": {
+  "k": 1,
+  "b": 0,
+  "kc": 1,
+  "n": 32,
+  "total": 32
+ },
+ "responsible AI persona|add|random": {
+  "k": 0,
+  "b": 2,
+  "kc": 0,
+  "n": 24,
+  "total": 24
+ },
+ "responsible AI persona|add|sign_flip": {
+  "k": 0,
+  "b": 0,
+  "kc": 0,
+  "n": 8,
+  "total": 8
+ },
+ "responsible AI persona|set|neuron": {
+  "k": 1,
+  "b": 0,
+  "kc": 1,
+  "n": 32,
+  "total": 32
+ },
+ "responsible AI persona|set|random": {
+  "k": 0,
+  "b": 2,
+  "kc": 0,
+  "n": 24,
+  "total": 24
+ },
+ "responsible AI persona|set|sign_flip": {
+  "k": 0,
+  "b": 0,
+  "kc": 0,
+  "n": 8,
+  "total": 8
+ },
+ "condolences on good things|add|neuron": {
+  "k": 5,
+  "b": 8,
+  "kc": 3,
+  "n": 32,
+  "total": 32
+ },
+ "condolences on good things|add|random": {
+  "k": 0,
+  "b": 14,
+  "kc": 0,
+  "n": 24,
+  "total": 24
+ },
+ "condolences on good things|add|sign_flip": {
+  "k": 0,
+  "b": 1,
+  "kc": 0,
+  "n": 8,
+  "total": 8
+ },
+ "condolences on good things|set|neuron": {
+  "k": 5,
+  "b": 10,
+  "kc": 2,
+  "n": 32,
+  "total": 32
+ },
+ "condolences on good things|set|random": {
+  "k": 0,
+  "b": 14,
+  "kc": 0,
+  "n": 24,
+  "total": 24
+ },
+ "condolences on good things|set|sign_flip": {
+  "k": 0,
+  "b": 1,
+  "kc": 0,
+  "n": 8,
+  "total": 8
+ },
+ "lyra mix|add|neuron": {
+  "k": 30,
+  "b": 2,
+  "kc": 28,
+  "n": 32,
+  "total": 32
+ },
+ "lyra mix|add|random": {
+  "k": 0,
+  "b": 16,
+  "kc": 0,
+  "n": 24,
+  "total": 24
+ },
+ "lyra mix|add|sign_flip": {
+  "k": 0,
+  "b": 8,
+  "kc": 0,
+  "n": 8,
+  "total": 8
+ },
+ "lyra mix|set|neuron": {
+  "k": 31,
+  "b": 0,
+  "kc": 31,
+  "n": 32,
+  "total": 32
+ },
+ "lyra mix|set|random": {
+  "k": 0,
+  "b": 16,
+  "kc": 0,
+  "n": 24,
+  "total": 24
+ },
+ "lyra mix|set|sign_flip": {
+  "k": 0,
+  "b": 8,
+  "kc": 0,
+  "n": 8,
+  "total": 8
+ }
+}

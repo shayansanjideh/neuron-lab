@@ -1,0 +1,17 @@
+# secrets
+tokends/
+*token*
+*.env
+.kaggle/
+# outputs and caches
+out/
+__pycache__/
+*.pyc
+# model weights
+*.safetensors
+*.gguf
+*.bin
+*.pt
+out-*/
+gallery/fonts/
+!gallery/out/

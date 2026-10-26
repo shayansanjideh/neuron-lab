@@ -1,0 +1,14 @@
+{
+ "id": "<your-kaggle-username>/neuron-gallery",
+ "title": "neuron-gallery",
+ "code_file": "gallery.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_internet": true,
+ "machine_shape": "NvidiaTeslaT4",
+ "dataset_sources": [
+  "<your-kaggle-username>/claude-token"
+ ]
+}
