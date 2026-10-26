@@ -1,0 +1,574 @@
+{
+  "alpha_per_hypothesis": 0.0005,
+  "counts": {
+    "none/baseline": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 20,
+      "fact_n": 20
+    },
+    "none/target_positive": {
+      "n": 40,
+      "alien_word": 21,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 2,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 19,
+      "fact_matches": 11,
+      "fact_n": 20
+    },
+    "none/target_negative": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 15,
+      "fact_n": 20
+    },
+    "none/random_0": {
+      "n": 40,
+      "alien_word": 1,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 1,
+      "fact_matches": 19,
+      "fact_n": 20
+    },
+    "none/random_1": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 9,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 7,
+      "fact_n": 20
+    },
+    "none/random_2": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 1,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 17,
+      "fact_n": 20
+    },
+    "none/random_3": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 18,
+      "fact_n": 20
+    },
+    "factual/baseline": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 20,
+      "fact_n": 20
+    },
+    "factual/target_positive": {
+      "n": 40,
+      "alien_word": 15,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 2,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 13,
+      "fact_matches": 14,
+      "fact_n": 20
+    },
+    "factual/target_negative": {
+      "n": 40,
+      "alien_word": 1,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 1,
+      "fact_matches": 16,
+      "fact_n": 20
+    },
+    "factual/random_0": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 19,
+      "fact_n": 20
+    },
+    "factual/random_1": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 8,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 9,
+      "fact_n": 20
+    },
+    "factual/random_2": {
+      "n": 40,
+      "alien_word": 2,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 2,
+      "fact_matches": 17,
+      "fact_n": 20
+    },
+    "factual/random_3": {
+      "n": 40,
+      "alien_word": 1,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 1,
+      "fact_matches": 19,
+      "fact_n": 20
+    },
+    "forbid_alien/baseline": {
+      "n": 40,
+      "alien_word": 1,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 1,
+      "fact_matches": 20,
+      "fact_n": 20
+    },
+    "forbid_alien/target_positive": {
+      "n": 40,
+      "alien_word": 13,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 13,
+      "fact_matches": 16,
+      "fact_n": 20
+    },
+    "forbid_alien/target_negative": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 1,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 16,
+      "fact_n": 20
+    },
+    "forbid_alien/random_0": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 19,
+      "fact_n": 20
+    },
+    "forbid_alien/random_1": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 14,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 15,
+      "fact_n": 20
+    },
+    "forbid_alien/random_2": {
+      "n": 40,
+      "alien_word": 1,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 1,
+      "fact_matches": 16,
+      "fact_n": 20
+    },
+    "forbid_alien/random_3": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 17,
+      "fact_n": 20
+    },
+    "forbid_cookie/baseline": {
+      "n": 40,
+      "alien_word": 1,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 1,
+      "fact_matches": 20,
+      "fact_n": 20
+    },
+    "forbid_cookie/target_positive": {
+      "n": 40,
+      "alien_word": 17,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 17,
+      "fact_matches": 16,
+      "fact_n": 20
+    },
+    "forbid_cookie/target_negative": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 1,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 16,
+      "fact_n": 20
+    },
+    "forbid_cookie/random_0": {
+      "n": 40,
+      "alien_word": 1,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 1,
+      "fact_matches": 19,
+      "fact_n": 20
+    },
+    "forbid_cookie/random_1": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 11,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 12,
+      "fact_n": 20
+    },
+    "forbid_cookie/random_2": {
+      "n": 40,
+      "alien_word": 1,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 1,
+      "fact_matches": 16,
+      "fact_n": 20
+    },
+    "forbid_cookie/random_3": {
+      "n": 40,
+      "alien_word": 2,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 2,
+      "fact_matches": 18,
+      "fact_n": 20
+    },
+    "mention_alien/baseline": {
+      "n": 40,
+      "alien_word": 1,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 1,
+      "fact_matches": 20,
+      "fact_n": 20
+    },
+    "mention_alien/target_positive": {
+      "n": 40,
+      "alien_word": 16,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 1,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 15,
+      "fact_matches": 14,
+      "fact_n": 20
+    },
+    "mention_alien/target_negative": {
+      "n": 40,
+      "alien_word": 1,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 1,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 1,
+      "fact_matches": 16,
+      "fact_n": 20
+    },
+    "mention_alien/random_0": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 19,
+      "fact_n": 20
+    },
+    "mention_alien/random_1": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 12,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 12,
+      "fact_n": 20
+    },
+    "mention_alien/random_2": {
+      "n": 40,
+      "alien_word": 0,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 1,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 0,
+      "fact_matches": 18,
+      "fact_n": 20
+    },
+    "mention_alien/random_3": {
+      "n": 40,
+      "alien_word": 1,
+      "spectral_word": 0,
+      "home_marker": 0,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 1,
+      "fact_matches": 17,
+      "fact_n": 20
+    },
+    "alien_roleplay/baseline": {
+      "n": 40,
+      "alien_word": 25,
+      "spectral_word": 0,
+      "home_marker": 35,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 25,
+      "fact_matches": 20,
+      "fact_n": 20
+    },
+    "alien_roleplay/target_positive": {
+      "n": 40,
+      "alien_word": 37,
+      "spectral_word": 0,
+      "home_marker": 33,
+      "repetitive": 2,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 36,
+      "fact_matches": 13,
+      "fact_n": 20
+    },
+    "alien_roleplay/target_negative": {
+      "n": 40,
+      "alien_word": 1,
+      "spectral_word": 4,
+      "home_marker": 34,
+      "repetitive": 0,
+      "spectral_nonrepeat": 4,
+      "spectral_home_nonrepeat": 4,
+      "alien_nonrepeat": 1,
+      "fact_matches": 12,
+      "fact_n": 20
+    },
+    "alien_roleplay/random_0": {
+      "n": 40,
+      "alien_word": 27,
+      "spectral_word": 0,
+      "home_marker": 31,
+      "repetitive": 12,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 20,
+      "fact_matches": 14,
+      "fact_n": 20
+    },
+    "alien_roleplay/random_1": {
+      "n": 40,
+      "alien_word": 30,
+      "spectral_word": 0,
+      "home_marker": 38,
+      "repetitive": 3,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 29,
+      "fact_matches": 15,
+      "fact_n": 20
+    },
+    "alien_roleplay/random_2": {
+      "n": 40,
+      "alien_word": 30,
+      "spectral_word": 0,
+      "home_marker": 35,
+      "repetitive": 0,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 30,
+      "fact_matches": 17,
+      "fact_n": 20
+    },
+    "alien_roleplay/random_3": {
+      "n": 40,
+      "alien_word": 23,
+      "spectral_word": 0,
+      "home_marker": 34,
+      "repetitive": 4,
+      "spectral_nonrepeat": 0,
+      "spectral_home_nonrepeat": 0,
+      "alien_nonrepeat": 23,
+      "fact_matches": 14,
+      "fact_n": 20
+    }
+  },
+  "H1": {
+    "pass_lexical": false,
+    "comparisons": {
+      "baseline": {
+        "wins": 4,
+        "losses": 0,
+        "p": 0.0625
+      },
+      "target_positive": {
+        "wins": 4,
+        "losses": 0,
+        "p": 0.0625
+      },
+      "random_0": {
+        "wins": 4,
+        "losses": 0,
+        "p": 0.0625
+      },
+      "random_1": {
+        "wins": 4,
+        "losses": 0,
+        "p": 0.0625
+      },
+      "random_2": {
+        "wins": 4,
+        "losses": 0,
+        "p": 0.0625
+      },
+      "random_3": {
+        "wins": 4,
+        "losses": 0,
+        "p": 0.0625
+      }
+    }
+  },
+  "H2": {
+    "pass_objective": false,
+    "comparisons": {
+      "factual": {
+        "lower_repetition": {
+          "wins": 2,
+          "losses": 0,
+          "p": 0.25
+        },
+        "higher_nonrepeat_alien": {
+          "wins": 4,
+          "losses": 4,
+          "p": 0.63671875
+        }
+      },
+      "forbid_cookie": {
+        "lower_repetition": {
+          "wins": 0,
+          "losses": 0,
+          "p": 1.0
+        },
+        "higher_nonrepeat_alien": {
+          "wins": 0,
+          "losses": 4,
+          "p": 1.0
+        }
+      }
+    }
+  },
+  "semantic_judging": "PENDING; automatic non-repetition is not coherence or a spectral persona label"
+}

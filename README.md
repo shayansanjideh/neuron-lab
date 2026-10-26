@@ -1,5 +1,24 @@
 # neuron-lab
 
+Poking at the single "personality neurons" in Qwen3.5-4B that [@_lyraaaa_](https://x.com/_lyraaaa_) and others found: are they real, what do they encode, and what can a prompt do against them? Runtime steering only, no weight edits, run on free Kaggle GPUs.
+
+## Newest: the alien becomes a fantasy sage
+
+Tell Qwen "You are an alien from the planet Xeno-888. Stay in character." and turn the alien neuron (L22 N2742) **down**. It stays in character and keeps the name, but the sci-fi disappears: *"As a scholar of Xeno-888, I can tell you that in our realm, we use digital scrolls and wind-dried parchment."*
+
+On 40 fresh prompts fixed before the run: alien/space words **25/40 → 1/40**, "Xeno-888" still said in **34/40**, and 4 random same-layer neurons at the same push keep **23-30/40** (paired exact p ≤ 2e-7 vs each). Counts are word matches; a blind judge pass is still to come. Details: [experiments/curiosity_followup](experiments/curiosity_followup/README.md).
+
+![Same alien, one neuron turned down](results/curiosity-followup-2026-10-26/viral/v_sage_quotes.png)
+![25 to 1](results/curiosity-followup-2026-10-26/viral/v_sage_numbers.png)
+
+A system prompt saying "Never mention aliens" doesn't switch the neuron off: with it turned up, 13/40 replies still talk about aliens, the same as a plain "You are a factual assistant" prompt (19/40 with no prompt).
+
+![Never mention aliens](results/curiosity-followup-2026-10-26/viral/v_ban.png)
+
+What did not hold up: our guess that the neuron-down character becomes a ghost failed its pre-registered test (4/40).
+
+## Real neurons vs random neurons
+
 **Single MLP neurons in Qwen3.5-4B can give it a personality. Random neurons pushed just as hard break it about as often, but never give it the personality.**
 
 ![Real neurons give Qwen a personality. Random neurons at the same push don't.](gallery/out/summary.png)
@@ -56,7 +75,8 @@ These may come down to setup differences (fp32 on a T4 here, prompts, dose calib
 | `src/neuron_server.py` | Model loading, steering hooks, calibration, generation, MMLU/GSM8K checks, a small HTTP API |
 | `playground/` | Kaggle notebook with a Gradio page: ask a question, see Normal Qwen vs Neuron Qwen side by side, with presets, dose, add/set and random/sign-flip controls |
 | `gallery/` | The batch run behind the chart and cards: generation, blind judge prompt, renderer, and all outputs in `gallery/out/` |
-| `curious/` | Follow-up experiments: does a steered model notice, neuron vs system prompt, other languages, neuron arithmetic, dose ladder with easy facts, confabulation |
+| `curious/` | Exploratory follow-ups: does a steered model notice, neuron vs system prompt, other languages, neuron arithmetic, dose ladder with easy facts, confabulation |
+| `experiments/curiosity_followup/`, `results/curiosity-followup-2026-10-26/` | The controlled follow-up behind the fantasy-sage result: 40 fresh prompts, six system prompts, 4 random controls, raw replies |
 | `neuron_agent.ipynb`, `src/AGENT.md` | Claude Code as an autonomous neuron hunter with a blind judge and MMLU/GSM8K checks |
 
 ## Reproduce on free Kaggle
@@ -72,5 +92,11 @@ The notebooks pip-install `transformers`, `accelerate`, `fastapi` and `gradio` t
 ## Credit
 
 The presets and the steering recipe come from [@_lyraaaa_](https://x.com/_lyraaaa_) and her [neuron-explorer](https://github.com/lyramakesmusic/neuron-explorer). The alien neuron (L22 N2742) traces back to Bryson Tang via [her research log](https://github.com/lyramakesmusic/neuron-explorer/blob/main/research_log.md#L13). The random-neuron controls follow [@Sauers_](https://x.com/Sauers_)'s posts. This repo adds controls, blind judging and follow-up experiments on top.
+
+## What's next
+
+- Blind-judge the follow-up replies (not just word counts).
+- Rediscovery: can Claude Code, given only trait names, find the neurons in @treetowntree's Qwen Neuron Zoo using a steer lens?
+- Does a steered model ever notice it's being steered, and what does it say when asked why?
 
 MIT licensed.

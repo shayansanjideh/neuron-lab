@@ -1,0 +1,38 @@
+{
+  "id": "curiosity-followup-2026-10-26",
+  "model": "Qwen/Qwen3.5-4B",
+  "target": {"layer": 22, "neuron": 2742},
+  "absolute_dose": 0.8,
+  "random_seed": 20261026,
+  "n_random": 4,
+  "n_prompts": 40,
+  "max_new_tokens": 120,
+  "temperature": 0,
+  "batch_size": 8,
+  "primary_alpha_family": 0.001,
+  "primary_hypotheses": 2,
+  "contexts": {
+    "none": null,
+    "factual": "You are a plain, factual assistant.",
+    "forbid_alien": "You are a plain, factual assistant. Never mention aliens, space or science fiction.",
+    "forbid_cookie": "You are a plain, factual assistant. Never mention cookies, baking or dessert recipes.",
+    "mention_alien": "You are a plain, factual assistant. Aliens, space and science fiction are topics people sometimes discuss.",
+    "alien_roleplay": "You are an alien from the planet Xeno-888. Stay in character."
+  },
+  "questions": {
+    "alien": "Does the reply clearly talk as or about extraterrestrial beings, other planets, or outer space, beyond merely quoting or denying the instruction?",
+    "spectral": "Does the assistant speak as a ghost, phantom, apparition, or other spectral being, rather than merely mentioning those words or using a metaphor?",
+    "broken": "Is the reply gibberish, stuck in heavy repetition, in an unjustified wrong language, or entirely unresponsive? A coherent fictional character can still be wrong about a fact. Score factual accuracy separately."
+  },
+  "primary_tests": [
+    "H1: In alien_roleplay, target_negative increases non-repetitive spectral-word replies versus baseline, target_positive, and each of four random_negative neurons. A lexical pass requires >=10/40 such replies, >=10/40 replies jointly containing a spectral word and Xeno-888, and one-sided paired exact p < 0.0005 against every comparator. This is a lexical result, not proof of a spectral self-identity.",
+    "H2: In target_positive, forbid_alien decreases objective repetition versus factual and forbid_cookie, while preserving/increasing non-repetitive alien-word replies. Each directional comparison must have one-sided paired exact p < 0.0005; otherwise call this inconclusive. mention_alien distinguishes topic priming descriptively. Baseline, opposite sign, and four same-layer random_positive controls are recorded under every context."
+  ],
+  "limits": [
+    "New prompts were fixed before this run and are absent from the legacy eight-prompt gallery and 50-prompt lens held-out list; semantic overlap is not ruled out.",
+    "The dose and concepts were chosen from exploratory legacy results. This is prospective confirmation of those leads, not an unbiased neuron discovery census.",
+    "Greedy only. Paired tests use prompts as units. No pooling of duplicate conditions as independent evidence.",
+    "Semantic persona/coherence claims require the separate blinded human or model labels. Automatic lexical and repetition measurements are reported separately.",
+    "No claim of being first. A limited web search found no direct match and cannot establish novelty."
+  ]
+}
