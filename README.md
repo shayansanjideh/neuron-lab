@@ -71,6 +71,6 @@ The notebooks pip-install `transformers`, `accelerate`, `fastapi` and `gradio` t
 
 ## Credit
 
-The presets and the steering recipe come from [@_lyraaaa_](https://x.com/_lyraaaa_) and her [neuron-explorer](https://github.com/lyramakesmusic/neuron-explorer). The alien neuron (L22 N2742) traces back to Bryson Tang via her research log. The random-neuron controls follow [@Sauers_](https://x.com/Sauers_)'s posts. This repo adds controls, blind judging and follow-up experiments on top.
+The presets and the steering recipe come from [@_lyraaaa_](https://x.com/_lyraaaa_) and her [neuron-explorer](https://github.com/lyramakesmusic/neuron-explorer). The alien neuron (L22 N2742) traces back to Bryson Tang via [her research log](https://github.com/lyramakesmusic/neuron-explorer/blob/main/research_log.md#L13). The random-neuron controls follow [@Sauers_](https://x.com/Sauers_)'s posts. This repo adds controls, blind judging and follow-up experiments on top.
 
 MIT licensed.
