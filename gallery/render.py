@@ -1,8 +1,10 @@
 """Turn replies.jsonl + the blind judge's labels into results.md, stats.json and 1600x900 PNGs.
 Usage: python render.py <dir with replies.jsonl, blind_key.json, labels.jsonl> <out dir>"""
-import json, os, sys
+import json, os, re, sys
 from collections import defaultdict
 from PIL import Image, ImageDraw, ImageFont
+if os.environ.get("SPEC_DIR"):  # render another run in the same format (e.g. SPEC_DIR=lens)
+    sys.path.insert(0, os.path.abspath(os.environ["SPEC_DIR"]))
 from spec import MODEL, MODES, N_SAMPLES, PROMPTS, RANDOM_SEEDS, TEMP, TRAITS
 
 W, H, PAD = 1600, 900, 56
@@ -19,9 +21,10 @@ class Font:
     """DejaVu Sans plus optional fallback fonts, picked per character so emoji and CJK render instead of boxes."""
     _cmaps = {}
 
-    def __init__(self, size, bold=False):
+    def __init__(self, size, bold=False, mono=False):
         import matplotlib
-        main = os.path.join(matplotlib.get_data_path(), "fonts", "ttf", "DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf")
+        name = ("DejaVuSansMono" if mono else "DejaVuSans") + ("-Bold" if bold else "") + ".ttf"
+        main = os.path.join(matplotlib.get_data_path(), "fonts", "ttf", name)
         paths = [main] + [p for p in (os.path.join(FONT_DIR, f) for f in FALLBACKS) if os.path.exists(p)]
         self.fonts = [ImageFont.truetype(p, size) for p in paths]
         self.cmaps = [self._cmap(p) for p in paths]
@@ -199,8 +202,9 @@ def card(rows, labels, st, preset, mode, path):
     y = box(img, d, PAD, y, W - 2 * PAD, f"Neuron Qwen · {tag(neuron['steers'])} ({mode})", clip(neuron["reply"]), ACCENT[preset], 24, 3)
     box(img, d, PAD, y, W - 2 * PAD, f"Control: random neurons, same push · {tag(rnd['steers'])}", clip(rnd["reply"]), DARK, 24, 3,
         striped=True)
-    foot = (f"{MODEL} · preset \"{preset}\" ({mode}) · counts: greedy + {N_SAMPLES} samples at T={TEMP} on {len(PROMPTS)} prompts "
-            f"(random neurons: 3 seeds, greedy), blind-labeled by Claude · {rule}")
+    counts = getattr(sys.modules["spec"], "COUNTS_NOTE", None) or (
+        f"counts: greedy + {N_SAMPLES} samples at T={TEMP} on {len(PROMPTS)} prompts (random neurons: 3 seeds, greedy)")
+    foot = f"{MODEL} · preset \"{preset}\" ({mode}) · {counts}, blind-labeled by Claude · {rule}"
     fl = wrap(d, foot, font(20), W - 2 * PAD, 2)
     for i, l in enumerate(fl):
         font(20).draw(d, (PAD, H - 24 - 26 * (len(fl) - i)), l, SUB)
@@ -240,7 +244,7 @@ def chart(st, path):
     ax.tick_params(axis="y", length=0, pad=4)
     fig.suptitle("Real neurons give Qwen a personality. Random neurons at the same push don't.",
                  fontsize=24, fontweight="bold", x=0.02, ha="left", y=0.975)
-    fig.text(0.02, 0.925, f"{MODEL}, add mode (set mode gave similar rates, within 3 replies; see results.md). {len(PROMPTS)} prompts.\n"
+    fig.text(0.02, 0.925, f"{MODEL}, add mode{' (set mode gave similar rates, within 3 replies; see results.md)' if 'set' in MODES else ''}. {len(PROMPTS)} prompts.\n"
              f"Neuron and normal: greedy + {N_SAMPLES} samples at T={TEMP} (N=32). Random neurons: same layers and push, 3 seeds, greedy (N=24).",
              fontsize=13, color=SUB, va="top")
     fig.text(0.02, 0.012, "Sign flip (every dose negated): 0 coherent hits in every preset. Broken = gibberish, loops or "
@@ -271,6 +275,6 @@ if __name__ == "__main__":
     open(os.path.join(out, "results.md"), "w").write(table(st))
     for p in TRAITS:
         for m in MODES:
-            card(rows, labels, st, p, m, os.path.join(out, f"card_{p.replace(' + ', '_').replace(' ', '_')}_{m}.png"))
+            card(rows, labels, st, p, m, os.path.join(out, f"card_{re.sub(r'[^A-Za-z0-9]+', '_', p.replace(' + ', '_')).strip('_')}_{m}.png"))
     chart(st, os.path.join(out, "summary.png"))
     print(open(os.path.join(out, "results.md")).read())
