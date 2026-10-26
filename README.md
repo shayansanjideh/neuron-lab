@@ -19,7 +19,7 @@ What did not hold up: our guess that the neuron-down character becomes a ghost f
 
 ## Real neurons vs random neurons
 
-**Single MLP neurons in Qwen3.5-4B can give it a personality. Random neurons pushed just as hard break it about as often, but never give it the personality.**
+**Single MLP neurons in Qwen3.5-4B can give it a personality. Random neurons pushed just as hard often break it too, but almost never give it the personality.**
 
 ![Real neurons give Qwen a personality. Random neurons at the same push don't.](gallery/out/summary.png)
 
@@ -65,6 +65,7 @@ These may come down to setup differences (fp32 on a T4 here, prompts, dose calib
 ## Caveats
 
 - 8 prompts, one judge pass, one model. Treat the counts as a strong signal, not a benchmark.
+- The judge isn't perfectly consistent. In a later run, two of the same eight greedy alien replies were relabeled as broken, and a stricter trait question brought the alien count to 10/32. One deduplicated rejudge of all outputs is planned.
 - Neuron indices are specific to Qwen3.5-4B and don't transfer to other models or sizes.
 - Sufficiency isn't monosemanticity: a neuron that reliably produces "alien" doesn't mean that's all it does.
 
